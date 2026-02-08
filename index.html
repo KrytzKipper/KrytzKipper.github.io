@@ -6,45 +6,60 @@
 -->
 <html>
 	<head>
-        <title>The Krytz Project</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-        <style>
-            /* 1. Pull the grid up by shrinking the Featured Post area */
-            #main > .post.featured {
-                margin-bottom: 0 !important;
-                padding-bottom: 0 !important;
-                border-bottom: 0 !important;
+    <title>The Krytz Project</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* 1. Pull the grid up by shrinking the Featured Post area */
+        #main > .post.featured {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            border-bottom: 0 !important;
+        }
+
+        /* 2. Remove the massive bottom margin on the Featured title */
+        .post.featured header.major {
+            margin-bottom: 1rem !important;
+        }
+
+        /* 3. Remove the top cushion from the 2x2 grid */
+        #main > .posts {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        /* 4. Keep all portfolio images consistent and centered */
+        .posts > article .image.fit img {
+            height: 300px !important;
+            object-fit: cover !important;
+            object-position: center !important;
+        }
+
+        /* 5. Style for 'Coming Soon' buttons */
+        .button.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* 6. Mobile Fix: Prevents category titles from smashing together */
+        @media screen and (max-width: 480px) {
+            .posts > article header h2 {
+                font-size: 1.1rem !important; /* Smaller font for mobile screens */
+                line-height: 1.4 !important;
+                letter-spacing: normal !important;
             }
 
-            /* 2. Remove the massive bottom margin on the Featured title */
-            .post.featured header.major {
-                margin-bottom: 1rem !important;
+            .posts > article header h2 br {
+                display: block !important; /* Ensures the line break is respected */
+                content: "";
+                margin-top: 0.5rem;
             }
-
-            /* 3. Remove the top cushion from the 2x2 grid */
-            #main > .posts {
-                margin-top: 0 !important;
-                padding-top: 0 !important;
-            }
-
-            /* 4. Keep all portfolio images consistent and centered */
-            .posts > article .image.fit img {
-                height: 300px !important;
-                object-fit: cover !important;
-                object-position: center !important;
-            }
-
-            /* 5. Style for 'Coming Soon' buttons */
-            .button.disabled {
-                opacity: 0.5;
-                cursor: not-allowed;
-                pointer-events: none;
-            }
-        </style>
-    </head>
+        }
+    </style>
+</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
