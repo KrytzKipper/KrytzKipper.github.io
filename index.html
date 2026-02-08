@@ -12,22 +12,36 @@
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <style>
-            /* Shrink the gap between Featured Post and the Grid */
+            /* 1. Pull the grid up by shrinking the Featured Post area */
             #main > .post.featured {
                 margin-bottom: 0 !important;
-                padding-bottom: 3rem !important; /* Reduced from default */
-                border-bottom: 0;
+                padding-bottom: 0 !important;
+                border-bottom: 0 !important;
             }
 
+            /* 2. Remove the massive bottom margin on the Featured title */
+            .post.featured header.major {
+                margin-bottom: 1rem !important;
+            }
+
+            /* 3. Remove the top cushion from the 2x2 grid */
             #main > .posts {
                 margin-top: 0 !important;
-                padding-top: 2rem !important; /* Pulls the grid up */
+                padding-top: 0 !important;
             }
 
-            /* Ensure all grid images are perfectly aligned */
+            /* 4. Keep all portfolio images consistent and centered */
             .posts > article .image.fit img {
                 height: 300px !important;
                 object-fit: cover !important;
+                object-position: center !important;
+            }
+
+            /* 5. Style for 'Coming Soon' buttons */
+            .button.disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+                pointer-events: none;
             }
         </style>
     </head>
