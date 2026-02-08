@@ -4686,11 +4686,6 @@ input, select, textarea {
 			visibility: visible;
 		}
 
-		/* Custom Portfolio Grid Image Fix */
-.posts > article .image.fit img {
-    height: 300px !important;
-    object-fit: cover !important;
-    object-position: center !important;
-}
+		
 
 	}
