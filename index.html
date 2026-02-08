@@ -6,12 +6,31 @@
 -->
 <html>
 	<head>
-		<title>Massively by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+        <title>The Krytz Project</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            /* Shrink the gap between Featured Post and the Grid */
+            #main > .post.featured {
+                margin-bottom: 0 !important;
+                padding-bottom: 3rem !important; /* Reduced from default */
+                border-bottom: 0;
+            }
+
+            #main > .posts {
+                margin-top: 0 !important;
+                padding-top: 2rem !important; /* Pulls the grid up */
+            }
+
+            /* Ensure all grid images are perfectly aligned */
+            .posts > article .image.fit img {
+                height: 300px !important;
+                object-fit: cover !important;
+            }
+        </style>
+    </head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
