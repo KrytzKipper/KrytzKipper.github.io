@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Learning Diary - The Krytz Project</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            /* Search Bar Styling */
+            #diarySearch {
+                width: 100%;
+                padding: 15px;
+                margin-bottom: 2rem;
+                border: 2px solid #eeeeee;
+                border-radius: 5px;
+                font-size: 1.1rem;
+            }
+
+            /* Resource Row Styling */
+            .resource-item {
+                display: grid;
+                grid-template-columns: 60px 1fr 150px;
+                align-items: center;
+                background: #fff;
+                border: 1px solid #eee;
+                padding: 1rem;
+                margin-bottom: 0.5rem;
+                border-radius: 4px;
+                transition: background 0.2s;
+            }
+
+            .resource-item:hover {
+                background: #f9f9f9;
+            }
+
+            .file-icon {
+                font-size: 1.5rem;
+                color: #18bfef;
+                text-align: center;
+            }
+
+            .file-info h4 {
+                margin: 0;
+                font-size: 1rem;
+                color: #212931;
+            }
+
+            .file-info p {
+                margin: 0;
+                font-size: 0.8rem;
+                color: #888;
+            }
+
+            .download-link-small {
+                text-align: right;
+                font-size: 0.8rem;
+                font-weight: bold;
+                text-decoration: none;
+                color: #18bfef;
+            }
+
+            /* Mobile adjustments */
+            @media screen and (max-width: 736px) {
+                .resource-item {
+                    grid-template-columns: 50px 1fr;
+                }
+                .download-link-small {
+                    grid-column: 2;
+                    text-align: left;
+                    margin-top: 5px;
+                }
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+        <div id="wrapper">
+            <header id="header"><a href="index.html" class="logo">The Krytz Project</a></header>
+            <nav id="nav">
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">My Projects</a></li>
+                    <li><a href="programming.html">Programming</a></li>
+                    <li class="active"><a href="learning-diary.html">Learning Diary</a></li>
+                </ul>
+            </nav>
+
+            <div id="main">
+                <header class="major">
+                    <h1>Learning Diary</h1>
+                    <p>A central repository for my personal research, study notes, and technical documentation.</p>
+                </header>
+
+                <section>
+                    <input type="text" id="diarySearch" onkeyup="filterDiary()" placeholder="Search by topic (e.g. 'C++', 'Networking', 'Level Design')...">
+                </section>
+
+                <div id="diaryList">
+
+                    <div class="resource-item">
+                        <div class="file-icon"><i class="icon solid fa-file-word"></i></div>
+                        <div class="file-info">
+                            <h4 class="resource-title">Unity Shader Fundamentals</h4>
+                            <p>Self-made guide on HLSL and vertex displacement in Unity.</p>
+                        </div>
+                        <a href="diary/Shaders_Guide.docx" download class="download-link-small">DOWNLOAD DOCX</a>
+                    </div>
+
+                    <div class="resource-item">
+                        <div class="file-icon"><i class="icon solid fa-file-powerpoint"></i></div>
+                        <div class="file-info">
+                            <h4 class="resource-title">Game Economy Design</h4>
+                            <p>Analysis presentation on loot tables and progression loops.</p>
+                        </div>
+                        <a href="diary/Economy_Analysis.pptx" download class="download-link-small">DOWNLOAD PPTX</a>
+                    </div>
+
+                    <div class="resource-item">
+                        <div class="file-icon"><i class="icon solid fa-file-code"></i></div>
+                        <div class="file-info">
+                            <h4 class="resource-title">Daily Learning: C++ Pointers</h4>
+                            <p>Code snippets and explanations from my deep dive into memory management.</p>
+                        </div>
+                        <a href="diary/Pointers_Study.cpp" download class="download-link-small">DOWNLOAD CPP</a>
+                    </div>
+
+                    <div class="resource-item">
+                        <div class="file-icon"><i class="icon solid fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <h4 class="resource-title">The Psychology of Level Design</h4>
+                            <p>Curated notes on player pathfinding and visual cues.</p>
+                        </div>
+                        <a href="diary/Level_Design_Notes.pdf" download class="download-link-small">DOWNLOAD PDF</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            function filterDiary() {
+                let input = document.getElementById('diarySearch').value.toLowerCase();
+                let items = document.getElementsByClassName('resource-item');
+
+                for (let i = 0; i < items.length; i++) {
+                    let title = items[i].getElementsByClassName('resource-title')[0].innerText.toLowerCase();
+                    let desc = items[i].getElementsByClassName('file-info')[0].innerText.toLowerCase();
+                    
+                    if (title.includes(input) || desc.includes(input)) {
+                        items[i].style.display = "grid";
+                    } else {
+                        items[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
