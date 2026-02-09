@@ -7,17 +7,40 @@
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <style>
-            /* Search Bar Styling */
-            #diarySearch {
-                width: 100%;
-                padding: 15px;
-                margin-bottom: 2rem;
-                border: 2px solid #eeeeee;
-                border-radius: 5px;
-                font-size: 1.1rem;
+            /* Search & Filter Bar */
+            .controls-wrapper {
+                margin-bottom: 3rem;
+                background: #f8f8f8;
+                padding: 2rem;
+                border-radius: 8px;
             }
 
-            /* Resource Row Styling */
+            #diarySearch {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 1.5rem;
+                border: 2px solid #ddd;
+                border-radius: 4px;
+            }
+
+            .filter-group {
+                text-align: center;
+            }
+
+            .filter-btn {
+                margin: 5px;
+                font-size: 0.7rem !important;
+                height: 2.5rem !important;
+                line-height: 2.5rem !important;
+                padding: 0 1.5rem !important;
+            }
+
+            .filter-btn.active {
+                background-color: #18bfef !important;
+                color: white !important;
+            }
+
+            /* Resource Row */
             .resource-item {
                 display: grid;
                 grid-template-columns: 60px 1fr 150px;
@@ -25,51 +48,54 @@
                 background: #fff;
                 border: 1px solid #eee;
                 padding: 1rem;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.75rem;
                 border-radius: 4px;
-                transition: background 0.2s;
+                transition: transform 0.2s;
             }
 
             .resource-item:hover {
-                background: #f9f9f9;
+                border-color: #18bfef;
+                transform: translateX(5px);
             }
 
             .file-icon {
                 font-size: 1.5rem;
-                color: #18bfef;
+                color: #212931;
                 text-align: center;
             }
 
-            .file-info h4 {
+            .resource-title {
                 margin: 0;
                 font-size: 1rem;
                 color: #212931;
-            }
-
-            .file-info p {
-                margin: 0;
-                font-size: 0.8rem;
-                color: #888;
-            }
-
-            .download-link-small {
-                text-align: right;
-                font-size: 0.8rem;
                 font-weight: bold;
-                text-decoration: none;
+            }
+
+            .resource-desc {
+                margin: 0;
+                font-size: 0.85rem;
+                color: #666;
+            }
+
+            .lang-tag {
+                font-size: 0.6rem;
+                background: #eee;
+                padding: 2px 6px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                margin-right: 10px;
+            }
+
+            .download-link {
+                text-align: right;
+                font-weight: bold;
+                font-size: 0.75rem;
                 color: #18bfef;
             }
 
-            /* Mobile adjustments */
             @media screen and (max-width: 736px) {
-                .resource-item {
-                    grid-template-columns: 50px 1fr;
-                }
-                .download-link-small {
-                    grid-column: 2;
-                    text-align: left;
-                    margin-top: 5px;
-                }
+                .resource-item { grid-template-columns: 50px 1fr; }
+                .download-link { grid-column: 2; text-align: left; }
             }
         </style>
     </head>
@@ -88,49 +114,50 @@
             <div id="main">
                 <header class="major">
                     <h1>Learning Diary</h1>
-                    <p>A central repository for my personal research, study notes, and technical documentation.</p>
+                    <p>My personal knowledge base. Browse research, notes, and study material by category or keyword.</p>
                 </header>
 
-                <section>
-                    <input type="text" id="diarySearch" onkeyup="filterDiary()" placeholder="Search by topic (e.g. 'C++', 'Networking', 'Level Design')...">
-                </section>
+                <div class="controls-wrapper">
+                    <input type="text" id="diarySearch" onkeyup="filterDiary()" placeholder="Search titles or descriptions...">
+                    
+                    <div class="filter-group">
+                        <button class="filter-btn active" onclick="setCategory('all', this)">All</button>
+                        <button class="filter-btn" onclick="setCategory('csharp', this)">C#</button>
+                        <button class="filter-btn" onclick="setCategory('cpp', this)">C++</button>
+                        <button class="filter-btn" onclick="setCategory('java', this)">Java</button>
+                    </div>
+                </div>
 
                 <div id="diaryList">
 
-                    <div class="resource-item">
+                    <div class="resource-item csharp">
                         <div class="file-icon"><i class="icon solid fa-file-word"></i></div>
                         <div class="file-info">
-                            <h4 class="resource-title">Unity Shader Fundamentals</h4>
-                            <p>Self-made guide on HLSL and vertex displacement in Unity.</p>
+                            <span class="lang-tag">C#</span>
+                            <h4 class="resource-title">Inheritance & Polymorphism Study</h4>
+                            <p class="resource-desc">Word document breaking down class structures in Unity.</p>
                         </div>
-                        <a href="diary/Shaders_Guide.docx" download class="download-link-small">DOWNLOAD DOCX</a>
+                        <a href="diary/CSharp_Structure.docx" download class="download-link">DOWNLOAD DOCX</a>
                     </div>
 
-                    <div class="resource-item">
+                    <div class="resource-item cpp">
                         <div class="file-icon"><i class="icon solid fa-file-powerpoint"></i></div>
                         <div class="file-info">
-                            <h4 class="resource-title">Game Economy Design</h4>
-                            <p>Analysis presentation on loot tables and progression loops.</p>
+                            <span class="lang-tag">C++</span>
+                            <h4 class="resource-title">Pointer Logic & Memory</h4>
+                            <p class="resource-desc">Presentation slides for my deep dive into heap/stack memory.</p>
                         </div>
-                        <a href="diary/Economy_Analysis.pptx" download class="download-link-small">DOWNLOAD PPTX</a>
+                        <a href="diary/CPP_Memory.pptx" download class="download-link">DOWNLOAD PPTX</a>
                     </div>
 
-                    <div class="resource-item">
+                    <div class="resource-item java">
                         <div class="file-icon"><i class="icon solid fa-file-code"></i></div>
                         <div class="file-info">
-                            <h4 class="resource-title">Daily Learning: C++ Pointers</h4>
-                            <p>Code snippets and explanations from my deep dive into memory management.</p>
+                            <span class="lang-tag">Java</span>
+                            <h4 class="resource-title">Object Oriented Design Patterns</h4>
+                            <p class="resource-desc">Code implementation of Singleton and Factory patterns.</p>
                         </div>
-                        <a href="diary/Pointers_Study.cpp" download class="download-link-small">DOWNLOAD CPP</a>
-                    </div>
-
-                    <div class="resource-item">
-                        <div class="file-icon"><i class="icon solid fa-file-pdf"></i></div>
-                        <div class="file-info">
-                            <h4 class="resource-title">The Psychology of Level Design</h4>
-                            <p>Curated notes on player pathfinding and visual cues.</p>
-                        </div>
-                        <a href="diary/Level_Design_Notes.pdf" download class="download-link-small">DOWNLOAD PDF</a>
+                        <a href="diary/Java_Patterns.java" download class="download-link">DOWNLOAD JAVA</a>
                     </div>
 
                 </div>
@@ -141,18 +168,35 @@
         <script src="assets/js/main.js"></script>
 
         <script>
+            let currentCategory = 'all';
+
+            function setCategory(category, btn) {
+                // Update active button
+                let buttons = document.getElementsByClassName('filter-btn');
+                for (let b of buttons) b.classList.remove('active');
+                btn.classList.add('active');
+                
+                currentCategory = category;
+                filterDiary(); // Re-run search with new category
+            }
+
             function filterDiary() {
-                let input = document.getElementById('diarySearch').value.toLowerCase();
+                let searchText = document.getElementById('diarySearch').value.toLowerCase();
                 let items = document.getElementsByClassName('resource-item');
 
-                for (let i = 0; i < items.length; i++) {
-                    let title = items[i].getElementsByClassName('resource-title')[0].innerText.toLowerCase();
-                    let desc = items[i].getElementsByClassName('file-info')[0].innerText.toLowerCase();
+                for (let item of items) {
+                    let title = item.querySelector('.resource-title').innerText.toLowerCase();
+                    let desc = item.querySelector('.resource-desc').innerText.toLowerCase();
                     
-                    if (title.includes(input) || desc.includes(input)) {
-                        items[i].style.display = "grid";
+                    // Check Category
+                    let categoryMatch = (currentCategory === 'all' || item.classList.contains(currentCategory));
+                    // Check Search Text
+                    let searchMatch = (title.includes(searchText) || desc.includes(searchText));
+
+                    if (categoryMatch && searchMatch) {
+                        item.style.display = "grid";
                     } else {
-                        items[i].style.display = "none";
+                        item.style.display = "none";
                     }
                 }
             }
