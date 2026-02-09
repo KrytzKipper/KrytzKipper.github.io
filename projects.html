@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>My Projects - The Krytz Project</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            /* Project Card Styling */
+            .project-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 30px;
+            }
+
+            .project-card {
+                background: #ffffff;
+                border: 1px solid #eeeeee;
+                border-radius: 8px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                transition: all 0.3s ease;
+            }
+
+            .project-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            }
+
+            .project-image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-bottom: 4px solid #18bfef;
+            }
+
+            .project-info {
+                padding: 1.5rem;
+                flex-grow: 1;
+            }
+
+            /* Badges */
+            .status-badge {
+                font-size: 0.7rem;
+                font-weight: bold;
+                padding: 4px 10px;
+                border-radius: 20px;
+                text-transform: uppercase;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+            .status-finished { background: #d4edda; color: #155724; }
+            .status-prototype { background: #fff3cd; color: #856404; }
+
+            .platform-icons {
+                margin: 10px 0;
+                font-size: 0.9rem;
+                color: #777;
+            }
+
+            .project-btn {
+                width: 100%;
+                margin-top: auto;
+                border-radius: 0 !important;
+                height: 3rem !important;
+                line-height: 3rem !important;
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+        <div id="wrapper">
+            <header id="header"><a href="index.html" class="logo">The Krytz Project</a></header>
+            <nav id="nav">
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="projects.html">My Projects</a></li>
+                    <li><a href="programming.html">Programming</a></li>
+                    <li><a href="game-reviews.html">Game Reviews</a></li>
+                </ul>
+            </nav>
+
+            <div id="main">
+                <header class="major">
+                    <h1>My Projects</h1>
+                    <p>A collection of standalone games and applications developed from scratch.</p>
+                </header>
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+                        <img src="images/TideshatchetPlaceholder.PNG" class="project-image" alt="Game Screenshot">
+                        <div class="project-info">
+                            <span class="status-badge status-finished">Finished Game</span>
+                            <h3>Tideshatchet</h3>
+                            <p>A fast-paced 3D action game built in Unity. Battle waves of enemies using unique elemental abilities.</p>
+                            <div class="platform-icons">
+                                <i class="icon solid fa-desktop"></i> Windows / macOS
+                            </div>
+                        </div>
+                        <a href="downloads/Tideshatchet_Setup.zip" download class="button primary project-btn">Download Game</a>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="images/mobile-app-placeholder.jpg" class="project-image" alt="App Screenshot">
+                        <div class="project-info">
+                            <span class="status-badge status-prototype">In Development</span>
+                            <h3>Krytz Tracker</h3>
+                            <p>A productivity mobile application for tracking development milestones and sprint goals.</p>
+                            <div class="platform-icons">
+                                <i class="icon solid fa-mobile-alt"></i> Android (.apk)
+                            </div>
+                        </div>
+                        <a href="downloads/KrytzTracker_v0.1.apk" download class="button project-btn">Download Beta</a>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="images/desktop-tool-placeholder.jpg" class="project-image" alt="Tool Screenshot">
+                        <div class="project-info">
+                            <span class="status-badge status-finished">Tool</span>
+                            <h3>Script Automator</h3>
+                            <p>A desktop utility designed to batch-rename and organize C# project directories for large Unity teams.</p>
+                            <div class="platform-icons">
+                                <i class="icon solid fa-laptop-code"></i> Windows (.exe)
+                            </div>
+                        </div>
+                        <a href="downloads/ScriptAutomator.zip" download class="button primary project-btn">Download Utility</a>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
