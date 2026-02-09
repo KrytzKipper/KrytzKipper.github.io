@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Game Design - The Krytz Project</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            /* Category Headers */
+            .design-section { margin-bottom: 4rem; }
+            .section-header { 
+                border-bottom: 2px solid #212931; 
+                margin-bottom: 2rem; 
+                padding-bottom: 0.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            /* Asset Grid for Models and Textures */
+            .asset-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .asset-card {
+                background: #fff;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                overflow: hidden;
+                transition: 0.3s;
+            }
+            .asset-card:hover { transform: translateY(-5px); border-color: #18bfef; }
+            .asset-thumb { width: 100%; height: 160px; object-fit: cover; background: #eee; }
+            .asset-info { padding: 1rem; }
+            .asset-info h4 { margin: 0; font-size: 0.9rem; }
+            
+            /* Document List for GDDs and Ideas */
+            .doc-list { list-style: none; padding: 0; }
+            .doc-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem;
+                background: #f9f9f9;
+                margin-bottom: 10px;
+                border-radius: 4px;
+                border-left: 5px solid #18bfef;
+            }
+            .doc-details h4 { margin: 0; font-size: 1rem; }
+            .doc-details p { margin: 0; font-size: 0.8rem; color: #777; }
+
+            .badge {
+                font-size: 0.6rem;
+                padding: 2px 8px;
+                background: #212931;
+                color: #fff;
+                border-radius: 10px;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+        <div id="wrapper">
+            <header id="header"><a href="index.html" class="logo">The Krytz Project</a></header>
+            <nav id="nav">
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">My Projects</a></li>
+                    <li><a href="programming.html">Programming</a></li>
+                    <li class="active"><a href="design-portfolio.html">Game Design</a></li>
+                    <li><a href="learning-diary.html">Learning Diary</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                </ul>
+            </nav>
+
+            <div id="main">
+                <header class="major">
+                    <h1>Game Design & Assets</h1>
+                    <p>Conceptual documentation, 3D assets, and experimental ideas.</p>
+                </header>
+
+                <section class="design-section">
+                    <div class="section-header">
+                        <h3>Game Design Documents</h3>
+                        <span class="badge">Docs / Slides</span>
+                    </div>
+                    <div class="doc-list">
+                        <div class="doc-item">
+                            <div class="doc-details">
+                                <h4>Pixel TT Core Loop Design</h4>
+                                <p>Comprehensive breakdown of mechanics, progression, and UI flow.</p>
+                            </div>
+                            <a href="design/PixelTT_GDD.docx" download class="button small">Download DOCX</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="design-section">
+                    <div class="section-header">
+                        <h3>3D Models</h3>
+                        <span class="badge">FBX / OBJ</span>
+                    </div>
+                    <div class="asset-grid">
+                        <div class="asset-card">
+                            <img src="images/model-thumb-1.jpg" class="asset-thumb" alt="Model Preview">
+                            <div class="asset-info">
+                                <h4>Low-Poly Character Base</h4>
+                                <p style="font-size: 0.7rem; margin-bottom: 10px;">Optimized for mobile performance.</p>
+                                <a href="design/models/Char_Base.fbx" download style="font-weight: bold; font-size: 0.7rem; color:#18bfef;">DOWNLOAD .FBX</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="design-section">
+                    <div class="section-header">
+                        <h3>Textures</h3>
+                        <span class="badge">Materials</span>
+                    </div>
+                    <div class="asset-grid">
+                        <div class="asset-card">
+                            <img src="images/texture-thumb-1.jpg" class="asset-thumb" alt="Texture Preview">
+                            <div class="asset-info">
+                                <h4>Stylized Stone Wall</h4>
+                                <p style="font-size: 0.7rem;">Hand-painted style texture pack.</p>
+                                <a href="design/textures/StoneWall_Pack.zip" download style="font-weight: bold; font-size: 0.7rem; color:#18bfef;">DOWNLOAD ZIP</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="design-section">
+                    <div class="section-header">
+                        <h3>New Ideas</h3>
+                        <span class="badge">Brainstorm</span>
+                    </div>
+                    <div class="doc-list">
+                        <div class="doc-item">
+                            <div class="doc-details">
+                                <h4>VR Stealth Mechanics Concept</h4>
+                                <p>Exploration of hand-tracking for distraction-based stealth.</p>
+                            </div>
+                            <a href="design/VR_Stealth_Concept.pdf" download class="button small">View Concept</a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
