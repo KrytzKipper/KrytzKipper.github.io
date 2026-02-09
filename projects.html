@@ -31,7 +31,7 @@
 
             .project-image {
                 width: 100%;
-                height: 200px;
+                height: 220px;
                 object-fit: cover;
                 border-bottom: 4px solid #18bfef;
             }
@@ -41,31 +41,40 @@
                 flex-grow: 1;
             }
 
-            /* Badges */
+            /* Status Badges */
             .status-badge {
                 font-size: 0.7rem;
                 font-weight: bold;
-                padding: 4px 10px;
+                padding: 4px 12px;
                 border-radius: 20px;
                 text-transform: uppercase;
                 display: inline-block;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
             }
-            .status-finished { background: #d4edda; color: #155724; }
-            .status-prototype { background: #fff3cd; color: #856404; }
+            .status-prototype { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+            .status-dev { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+            .status-stable { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
 
             .platform-icons {
                 margin: 10px 0;
-                font-size: 0.9rem;
-                color: #777;
+                font-size: 0.85rem;
+                color: #555;
+                font-weight: bold;
+            }
+
+            .platform-icons i {
+                margin-right: 5px;
+                color: #18bfef;
             }
 
             .project-btn {
                 width: 100%;
                 margin-top: auto;
                 border-radius: 0 !important;
-                height: 3rem !important;
-                line-height: 3rem !important;
+                height: 3.5rem !important;
+                line-height: 3.5rem !important;
+                text-transform: uppercase;
+                letter-spacing: 1px;
             }
         </style>
     </head>
@@ -84,48 +93,48 @@
             <div id="main">
                 <header class="major">
                     <h1>My Projects</h1>
-                    <p>A collection of standalone games and applications developed from scratch.</p>
+                    <p>Playable builds and standalone applications. From experimental prototypes to portable tools.</p>
                 </header>
 
                 <div class="project-grid">
 
                     <article class="project-card">
-                        <img src="images/TideshatchetPlaceholder.PNG" class="project-image" alt="Game Screenshot">
+                        <img src="images/pixel-tt-main.jpg" class="project-image" alt="Pixel TT Gameplay">
                         <div class="project-info">
-                            <span class="status-badge status-finished">Finished Game</span>
-                            <h3>Tideshatchet</h3>
-                            <p>A fast-paced 3D action game built in Unity. Battle waves of enemies using unique elemental abilities.</p>
+                            <span class="status-badge status-prototype">Game Prototype</span>
+                            <h3>Pixel TT</h3>
+                            <p>A DRM-free Unity experience focusing on core pixel-art mechanics. Explore early gameplay loops and mechanical systems in this standalone build.</p>
                             <div class="platform-icons">
-                                <i class="icon solid fa-desktop"></i> Windows / macOS
+                                <i class="icon solid fa-gamepad"></i> Unity Build (PC)
                             </div>
                         </div>
-                        <a href="downloads/Tideshatchet_Setup.zip" download class="button primary project-btn">Download Game</a>
+                        <a href="downloads/PixelTT_Build.zip" download class="button primary project-btn">Download DRM-Free</a>
                     </article>
 
                     <article class="project-card">
-                        <img src="images/mobile-app-placeholder.jpg" class="project-image" alt="App Screenshot">
+                        <img src="images/have-a-guess-main.jpg" class="project-image" alt="Have a Guess App">
                         <div class="project-info">
-                            <span class="status-badge status-prototype">In Development</span>
-                            <h3>Krytz Tracker</h3>
-                            <p>A productivity mobile application for tracking development milestones and sprint goals.</p>
+                            <span class="status-badge status-dev">In Development</span>
+                            <h3>Have a Guess!</h3>
+                            <p>An interactive party game for Android. My personal take on the "Heads Up" genre, built for quick sessions and smooth mobile performance.</p>
                             <div class="platform-icons">
-                                <i class="icon solid fa-mobile-alt"></i> Android (.apk)
+                                <i class="icon brands fa-android"></i> Android APK
                             </div>
                         </div>
-                        <a href="downloads/KrytzTracker_v0.1.apk" download class="button project-btn">Download Beta</a>
+                        <a href="downloads/HaveAGuess.apk" download class="button project-btn">Download APK</a>
                     </article>
 
                     <article class="project-card">
-                        <img src="images/desktop-tool-placeholder.jpg" class="project-image" alt="Tool Screenshot">
+                        <img src="images/the-lister-main.jpg" class="project-image" alt="The Lister Interface">
                         <div class="project-info">
-                            <span class="status-badge status-finished">Tool</span>
-                            <h3>Script Automator</h3>
-                            <p>A desktop utility designed to batch-rename and organize C# project directories for large Unity teams.</p>
+                            <span class="status-badge status-stable">Desktop Tool</span>
+                            <h3>The Lister</h3>
+                            <p>A portable game tracker combining the features of Playnite and Backloggd. Log your sessions and manage your library with this lightweight Windows utility.</p>
                             <div class="platform-icons">
-                                <i class="icon solid fa-laptop-code"></i> Windows (.exe)
+                                <i class="icon solid fa-window-maximize"></i> Windows Portable (.exe)
                             </div>
                         </div>
-                        <a href="downloads/ScriptAutomator.zip" download class="button primary project-btn">Download Utility</a>
+                        <a href="downloads/TheLister_Portable.zip" download class="button primary project-btn">Download Portable</a>
                     </article>
 
                 </div>
