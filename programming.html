@@ -1,64 +1,74 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Programming Portfolio - The Krytz Project</title>
+        <title>Scripts & Logic - The Krytz Project</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <style>
-            /* Programming Hub Specifics */
-            .language-section {
-                margin-bottom: 4rem;
-                border-top: 2px solid #eeeeee;
-                padding-top: 2rem;
+            /* Filter Menu Styling */
+            .filter-menu {
+                text-align: center;
+                margin-bottom: 3rem;
             }
-            .lang-header {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                margin-bottom: 2rem;
+            .filter-btn {
+                margin: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
             }
-            .lang-icon {
+            .filter-btn.active {
+                background-color: #18bfef !important;
+                color: white !important;
+                box-shadow: none;
+            }
+
+            /* Script Grid */
+            .script-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+                display: flex; /* Initial flex for layout */
+                flex-wrap: wrap;
+            }
+
+            .script-card {
+                background: #ffffff;
+                border: 1px solid #e5e5e5;
+                border-radius: 6px;
+                padding: 1.5rem;
+                width: calc(50% - 20px); /* 2 per row */
+                transition: transform 0.2s;
+                display: block; /* Hidden/shown via JS */
+            }
+
+            @media screen and (max-width: 736px) {
+                .script-card { width: 100%; }
+            }
+
+            .script-card:hover {
+                border-color: #18bfef;
+                transform: translateY(-3px);
+            }
+
+            .lang-tag {
+                font-family: monospace;
+                font-size: 0.7rem;
+                padding: 2px 6px;
                 background: #212931;
                 color: #fff;
-                padding: 5px 15px;
-                border-radius: 4px;
-                font-family: monospace;
-                font-weight: bold;
-            }
-            
-            /* The Code Card */
-            .code-card {
-                background: #fdfdfd;
-                border: 1px solid #e5e5e5;
-                border-radius: 8px;
-                padding: 1.5rem;
-                margin-bottom: 1.5rem;
-                transition: transform 0.2s ease;
-            }
-            .code-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            }
-            .code-card h4 {
-                margin: 0 0 0.5rem 0;
-                color: #18bfef; /* Accent color */
-            }
-            .code-tag {
-                font-size: 0.7rem;
-                background: #eee;
-                padding: 2px 8px;
-                border-radius: 10px;
-                text-transform: uppercase;
-            }
-            .download-btn {
-                margin-top: 1rem;
+                border-radius: 3px;
+                margin-bottom: 10px;
                 display: inline-block;
-                font-size: 0.8rem !important;
-                height: 2.5rem !important;
-                line-height: 2.5rem !important;
-                padding: 0 1.5rem !important;
+            }
+
+            .download-link {
+                display: block;
+                margin-top: 15px;
+                font-weight: bold;
+                font-size: 0.8rem;
+                text-decoration: none;
+                color: #18bfef;
             }
         </style>
     </head>
@@ -76,68 +86,75 @@
             <div id="main">
                 <header class="major">
                     <h1>Programming Portfolio</h1>
-                    <p>Technical scripts, logic systems, and architecture built across multiple languages.</p>
+                    <p>Select a category to view and download my technical scripts.</p>
                 </header>
 
-                <section class="language-section">
-                    <div class="lang-header">
-                        <span class="lang-icon">C#</span>
-                        <h3>Unity & Engine Development</h3>
-                    </div>
-                    
-                    <div class="code-card">
-                        <span class="code-tag">Gameplay Logic</span>
-                        <h4>Advanced Character Controller</h4>
-                        <p>A physics-based movement system featuring custom gravity, slope detection, and momentum-based jumping.</p>
-                        <a href="scripts/CharacterController.cs" download class="button primary icon solid fa-download download-btn">Download .cs</a>
-                    </div>
-                </section>
+                <div class="filter-menu">
+                    <button class="filter-btn active" onclick="filterScripts('all', this)">All</button>
+                    <button class="filter-btn" onclick="filterScripts('csharp', this)">C#</button>
+                    <button class="filter-btn" onclick="filterScripts('cpp', this)">C++</button>
+                    <button class="filter-btn" onclick="filterScripts('java', this)">Java</button>
+                    <button class="filter-btn" onclick="filterScripts('misc', this)">Misc.</button>
+                </div>
 
-                <section class="language-section">
-                    <div class="lang-header">
-                        <span class="lang-icon">C++</span>
-                        <h3>Systems & Data Management</h3>
-                    </div>
+                <div class="script-grid" id="scriptContainer">
                     
-                    <div class="code-card">
-                        <span class="code-tag">Performance</span>
-                        <h4>Memory Management Pool</h4>
-                        <p>A custom object pooling system designed to minimize heap fragmentation in high-performance environments.</p>
-                        <a href="scripts/MemoryPool.cpp" download class="button primary icon solid fa-download download-btn">Download .cpp</a>
+                    <div class="script-card csharp">
+                        <span class="lang-tag">C#</span>
+                        <h4>PlayerMovement.cs</h4>
+                        <p>A modular controller for 3D physics-based movement.</p>
+                        <a href="scripts/PlayerMovement.cs" download class="download-link">DOWNLOAD SCRIPT</a>
                     </div>
-                </section>
 
-                <section class="language-section">
-                    <div class="lang-header">
-                        <span class="lang-icon">Java</span>
-                        <h3>Application & Backend</h3>
+                    <div class="script-card cpp">
+                        <span class="lang-tag">C++</span>
+                        <h4>AStarPathfinder.cpp</h4>
+                        <p>Custom A* implementation for grid-based pathfinding.</p>
+                        <a href="scripts/AStarPathfinder.cpp" download class="download-link">DOWNLOAD SCRIPT</a>
                     </div>
-                    
-                    <div class="code-card">
-                        <span class="code-tag">Database</span>
-                        <h4>Inventory SQL Connector</h4>
-                        <p>A Java-based bridge for connecting game inventory states to an external SQL database.</p>
-                        <a href="scripts/DBConnector.java" download class="button primary icon solid fa-download download-btn">Download .java</a>
-                    </div>
-                </section>
 
-                <section class="language-section">
-                    <div class="lang-header">
-                        <span class="lang-icon">Misc.</span>
-                        <h3>Other Tools & Languages</h3>
+                    <div class="script-card java">
+                        <span class="lang-tag">Java</span>
+                        <h4>DataParser.java</h4>
+                        <p>Back-end utility for handling JSON game data.</p>
+                        <a href="scripts/DataParser.java" download class="download-link">DOWNLOAD SCRIPT</a>
                     </div>
-                    
-                    <div class="code-card">
-                        <span class="code-tag">Python</span>
-                        <h4>Asset Batch Exporter</h4>
-                        <p>A Python script for Blender that automates the export of FBX files with correct naming conventions.</p>
-                        <a href="scripts/exporter.py" download class="button primary icon solid fa-download download-btn">Download .py</a>
+
+                    <div class="script-card misc">
+                        <span class="lang-tag">Python</span>
+                        <h4>AutoExport.py</h4>
+                        <p>Blender automation tool for batch FBX exporting.</p>
+                        <a href="scripts/AutoExport.py" download class="download-link">DOWNLOAD SCRIPT</a>
                     </div>
-                </section>
+
+                    </div>
             </div>
         </div>
 
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/main.js"></script>
+
+        <script>
+            function filterScripts(category, btn) {
+                // Update active button state
+                let buttons = document.getElementsByClassName('filter-btn');
+                for (let b of buttons) b.classList.remove('active');
+                btn.classList.add('active');
+
+                // Filter the cards
+                let cards = document.getElementsByClassName('script-card');
+                for (let card of cards) {
+                    if (category === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.classList.contains(category)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
