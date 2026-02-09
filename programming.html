@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Programming Portfolio - The Krytz Project</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            /* Programming Hub Specifics */
+            .language-section {
+                margin-bottom: 4rem;
+                border-top: 2px solid #eeeeee;
+                padding-top: 2rem;
+            }
+            .lang-header {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 2rem;
+            }
+            .lang-icon {
+                background: #212931;
+                color: #fff;
+                padding: 5px 15px;
+                border-radius: 4px;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            
+            /* The Code Card */
+            .code-card {
+                background: #fdfdfd;
+                border: 1px solid #e5e5e5;
+                border-radius: 8px;
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+                transition: transform 0.2s ease;
+            }
+            .code-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            .code-card h4 {
+                margin: 0 0 0.5rem 0;
+                color: #18bfef; /* Accent color */
+            }
+            .code-tag {
+                font-size: 0.7rem;
+                background: #eee;
+                padding: 2px 8px;
+                border-radius: 10px;
+                text-transform: uppercase;
+            }
+            .download-btn {
+                margin-top: 1rem;
+                display: inline-block;
+                font-size: 0.8rem !important;
+                height: 2.5rem !important;
+                line-height: 2.5rem !important;
+                padding: 0 1.5rem !important;
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+        <div id="wrapper">
+            <header id="header"><a href="index.html" class="logo">The Krytz Project</a></header>
+            <nav id="nav">
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="programming.html">Programming</a></li>
+                    <li><a href="game-reviews.html">Game Reviews</a></li>
+                </ul>
+            </nav>
+
+            <div id="main">
+                <header class="major">
+                    <h1>Programming Portfolio</h1>
+                    <p>Technical scripts, logic systems, and architecture built across multiple languages.</p>
+                </header>
+
+                <section class="language-section">
+                    <div class="lang-header">
+                        <span class="lang-icon">C#</span>
+                        <h3>Unity & Engine Development</h3>
+                    </div>
+                    
+                    <div class="code-card">
+                        <span class="code-tag">Gameplay Logic</span>
+                        <h4>Advanced Character Controller</h4>
+                        <p>A physics-based movement system featuring custom gravity, slope detection, and momentum-based jumping.</p>
+                        <a href="scripts/CharacterController.cs" download class="button primary icon solid fa-download download-btn">Download .cs</a>
+                    </div>
+                </section>
+
+                <section class="language-section">
+                    <div class="lang-header">
+                        <span class="lang-icon">C++</span>
+                        <h3>Systems & Data Management</h3>
+                    </div>
+                    
+                    <div class="code-card">
+                        <span class="code-tag">Performance</span>
+                        <h4>Memory Management Pool</h4>
+                        <p>A custom object pooling system designed to minimize heap fragmentation in high-performance environments.</p>
+                        <a href="scripts/MemoryPool.cpp" download class="button primary icon solid fa-download download-btn">Download .cpp</a>
+                    </div>
+                </section>
+
+                <section class="language-section">
+                    <div class="lang-header">
+                        <span class="lang-icon">Java</span>
+                        <h3>Application & Backend</h3>
+                    </div>
+                    
+                    <div class="code-card">
+                        <span class="code-tag">Database</span>
+                        <h4>Inventory SQL Connector</h4>
+                        <p>A Java-based bridge for connecting game inventory states to an external SQL database.</p>
+                        <a href="scripts/DBConnector.java" download class="button primary icon solid fa-download download-btn">Download .java</a>
+                    </div>
+                </section>
+
+                <section class="language-section">
+                    <div class="lang-header">
+                        <span class="lang-icon">Misc.</span>
+                        <h3>Other Tools & Languages</h3>
+                    </div>
+                    
+                    <div class="code-card">
+                        <span class="code-tag">Python</span>
+                        <h4>Asset Batch Exporter</h4>
+                        <p>A Python script for Blender that automates the export of FBX files with correct naming conventions.</p>
+                        <a href="scripts/exporter.py" download class="button primary icon solid fa-download download-btn">Download .py</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
