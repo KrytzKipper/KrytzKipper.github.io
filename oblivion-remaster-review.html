@@ -31,6 +31,16 @@
                 font-weight: bold;
                 border-radius: 4px;
             }
+            /* Dossier styling */
+            .dossier-box {
+                overflow: auto; 
+                margin: 2rem 0; 
+                background: #212931; 
+                color: #ffffff; 
+                padding: 20px; 
+                border-radius: 4px; 
+                border-left: 8px solid #f2cf5b;
+            }
         </style>
     </head>
     <body class="is-preload">
@@ -54,7 +64,7 @@
                         <p>A magical adventure through the unforgettable land of Cyrodil, Tamriel</p>
                     </header>
 
-                    <div class="image main"><img src="images/Oblivion Remaster Review Image.png" alt="" /></div>
+                    <div class="image main"><img src="images/Oblivion Remaster Review Image.png" alt="Oblivion Remastered" /></div>
 
                     <div class="review-content">
                         <p><strong>The Introduction:</strong> The Elder Scrolls IV: Oblivion Remastered is a fantasy role playing game that is set in the province of Cyrodil, which is the capital of Tamriel. The original game released in 2006 and is known as one of the best games if its time. I jump into the remaster of this special game to see if the game has been given the love it deserves</p>
@@ -62,7 +72,21 @@
                         <h3>Did it receive the deserved care?</h3>
                         <p>At a first glance, Oblivion Remastered looks fantastic. The visual boost it was given all round was nothing but fantastic, unfortunately it seems to have come at a cost. The game was developed using Unreal Engine 5 as an overlay on top of Bethesda's creation engine. That is not inherently a bad thing, but the way it was executed was not done with great respect. Everything looks visually stunning because every new texture is 4k or 8k, and this is a problem because there was no compression attempted. This results in the remaster clocking in at 120GB while the original is 26 times smaller at 4.6GB. With all that being said, this had lead to a lot of performace issues for players, and I am not just talking about the typical Bethesda bugs. I do think that using the creation engine underneath the hood was the correct move though. When a game like Oblivion is remastered, any returning players from the original game will want the exact same experience. Jumping up a mountain sideways by spamming the jump button or crouch running into a wall at a local tavern to level up your sneak. These are all things that if changed, would only be suited for the new player that never experienced the original release.</p>
 
-                        <div class="image main"><img src="images/adoring-fan.jpg" alt="" /></div>
+                        <div class="dossier-box">
+                            <img src="images/adoring-fan.jpg" 
+                                 style="width: 150px; height: 150px; object-fit: cover; float: left; margin-right: 25px; border: 2px solid #f2cf5b;">
+                            
+                            <div style="float: left;">
+                                <h4 style="margin: 0 0 10px 0; color: #f2cf5b; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #555;">Intelligence File</h4>
+                                <p style="margin: 0; line-height: 1.8; font-size: 0.9rem;">
+                                    <strong style="color: #f2cf5b;">NAME:</strong> Adoring Fan<br />
+                                    <strong style="color: #f2cf5b;">RACE:</strong> Wood Elf (Bosmer)<br />
+                                    <strong style="color: #f2cf5b;">LOCATION:</strong> Imperial City Arena<br />
+                                    <strong style="color: #f2cf5b;">FACTION:</strong> Grand Champion's Circle
+                                </p>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
                         
                         <blockquote>"Yes, oh great and mighty Grand Champion? Is there something you need? Can I carry your weapon? Shine your boots? Backrub, perhaps?"</blockquote>
 
